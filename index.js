@@ -130,7 +130,15 @@ next.addEventListener("click",()=>{
     }
 
     //grouping
-
+    for(let i=0;i<groups.length;i++){ //emptying groups if any group is non empty
+        if(groups[i].length){
+            groups = []
+            for(let i=0;i<n;i++){
+                groups.push([])
+            }
+            break
+        }
+    }
     for(let i=0;i<dots.length;i++){
         let min = Math.min(...distances[i])
         let select = distances[i].indexOf(min)
